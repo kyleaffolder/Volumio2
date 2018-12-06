@@ -133,7 +133,7 @@ var searchOnline = function (defer, web) {
 			decodedAlbum = decodedAlbum|| null;
 		}
 
-		albumart(decodedArtist, decodedAlbum, decodedResolution, function (err, url) {
+		albumart(decodedArtist, {album: decodedAlbum, size: decodedResolution}, function (err, url) {
             if (err) {
                 //console.log("ERROR getting albumart: " + err + " for Infopath '" + infoPath + "'");
                 defer.reject(new Error(err));
